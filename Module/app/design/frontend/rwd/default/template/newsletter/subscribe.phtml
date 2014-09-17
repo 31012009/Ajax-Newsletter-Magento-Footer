@@ -36,7 +36,7 @@
             <div class="input-box">
                <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email" />
             </div>
-            <div class="actions">
+            <div class="actions" id="newsletter-subscribe">
                 <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button"><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
             </div>
         </div>
@@ -54,7 +54,7 @@
 <!--New Script Here-->
     <script type="text/javascript">
         $j(document).ready(function(){
-            $j('.button').click(function(e){
+            $j('#newsletter-subscribe .button').click(function(e){
                 var email = $j("#newsletter").val();
                 var url = $j('#newsletter-validate-detail').attr('action');
                 var _data = url.replace('newsletter/subscriber/new', 'newsletter/subscriber/newAjax');
