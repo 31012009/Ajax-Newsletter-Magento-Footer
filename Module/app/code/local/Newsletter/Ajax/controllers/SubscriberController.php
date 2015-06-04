@@ -67,6 +67,7 @@ class Newsletter_Ajax_SubscriberController extends Mage_Newsletter_SubscriberCon
                 $session->addException($e, $message);
             }
         }
-        $this->_redirectReferer();
+        $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($response));
+        return;
     }
 }
