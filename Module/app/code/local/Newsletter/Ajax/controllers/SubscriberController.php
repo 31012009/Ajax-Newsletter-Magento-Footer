@@ -7,11 +7,11 @@ class Newsletter_Ajax_SubscriberController extends Mage_Newsletter_SubscriberCon
      */
     public function newAjaxAction()
     {
+        $response = array();
         if ($this->getRequest()->isPost() && $this->getRequest()->getPost('email')) {
             $session            = Mage::getSingleton('core/session');
             $customerSession    = Mage::getSingleton('customer/session');
             $email              = (string) $this->getRequest()->getPost('email');
-            $response = array();
 
             try {
                 if (!Zend_Validate::is($email, 'EmailAddress')) {
