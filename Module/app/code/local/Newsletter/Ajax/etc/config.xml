@@ -20,10 +20,10 @@
     <frontend>
         <routers>
             <newsletter>
+                <use>standard</use>
                 <args>
-                    <modules>
-                        <newsletter_ajax before="Mage_Newsletter">Newsletter_Ajax</newsletter_ajax>
-                    </modules>
+                    <module>Newsletter_Ajax</module>
+                    <frontName>newsletter</frontName>
                 </args>
             </newsletter>
         </routers>
